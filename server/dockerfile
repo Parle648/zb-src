@@ -1,0 +1,6 @@
+FROM node:20.11.0 as server-builder
+
+WORKDIR /server-container
+COPY . .
+RUN npm install
+CMD npm install && npx prisma migrate dev --name again && npm run start:dev
