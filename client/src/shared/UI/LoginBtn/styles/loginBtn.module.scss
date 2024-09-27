@@ -1,0 +1,23 @@
+.button {
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 160px;
+  height: 44px;
+  color: #b4935b;
+  background-color: transparent;
+  border: 1px solid #b4935b;
+  border-radius: 5px;
+
+  font-family: 'Merriweather';
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 22px;
+  text-align: center;
+
+  &:hover {
+    color: #fff;
+    background-color: #b4935b;
+  }
+}

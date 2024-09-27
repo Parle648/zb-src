@@ -1,0 +1,29 @@
+.block {
+  width: 1270px;
+  margin: 0px auto;
+  .title {
+    font-family: 'Merriweather';
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 34px;
+    text-align: left;
+
+    color: #b29f7e;
+
+    margin-bottom: 20px;
+    padding-top: 50px;
+  }
+
+  .grid {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 1300px) {
+  .block {
+    width: 80vw;
+  }
+}

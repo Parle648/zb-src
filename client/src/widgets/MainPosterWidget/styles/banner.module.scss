@@ -1,0 +1,87 @@
+.block {
+  width: 100vw;
+  height: 1024px;
+  background-color: #172234;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .background {
+    display: block;
+    width: 100vw;
+    height: 100%;
+    opacity: 0.6;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .title {
+    font-family: 'Merriweather';
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 80px;
+    text-align: center;
+
+    color: #fff;
+    position: relative;
+  }
+
+  .description {
+    width: 822px;
+    font-family: 'Lato';
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 32px;
+    letter-spacing: -0.02em;
+    text-align: center;
+
+    color: #fff;
+    margin-bottom: 20px;
+    position: relative;
+  }
+
+  .startBtn {
+    display: block;
+    width: 160px;
+    height: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+
+    font-family: 'Merriweather';
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 34px;
+    text-align: left;
+
+    color: #fff;
+    background-color: transparent;
+    border: 1px solid #fff;
+    border-radius: 5px;
+
+    &:hover {
+      background-color: #ffffff69;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .block {
+    .title {
+      font-size: 34px;
+      line-height: 50px;
+      text-align: center;
+    }
+
+    .description {
+      width: 70vw;
+      font-size: 16px;
+    }
+  }
+}
