@@ -1,4 +1,4 @@
-import { Get, Injectable, Post } from '@nestjs/common';
+import { Get, Injectable, Post, Put } from '@nestjs/common';
 import { DatabaseService } from 'src/database/database.service';
 import * as jwt from 'jsonwebtoken';
 
@@ -14,27 +14,45 @@ export class UsersService {
 
       return { token: token };
     } catch (error) {
-      return error;
+      return;
+    }
+  }
+
+  @Put()
+  async updateOne(updateUserDto: any, email: string) {
+    try {
+      const user = await this.database.users.update({
+        where: { email: email },
+        data: { ...updateUserDto },
+      });
+      const token = jwt.sign({ ...user }, process.env.JWT_SECRET);
+
+      return { token: token };
+    } catch (error) {
+      return {
+        message: 'there is no user with this email',
+      };
     }
   }
 
   @Get()
-  async authorization(loginData: {email: string, password: string}) {
+  async authorization(loginData: string) {
     try {
-      // const loginData: any = jwt.decode(loginDataToken);
+      console.log({ ...JSON.parse(loginData) });
 
-      const user = await this.database.users.findFirst({
-        where: {
-          email: loginData.email,
-          password: loginData.password,
-        },
+      const user = await this.database.users.findUnique({
+        where: { ...JSON.parse(loginData) },
       });
+
+      console.log(user);
+
+      if (user === null) throw new Error();
 
       const authToken = jwt.sign({ ...user }, process.env.JWT_SECRET);
 
       return { token: authToken };
     } catch (error) {
-      return error;
+      return { message: 'password / email is incorrect' };
     }
   }
 }

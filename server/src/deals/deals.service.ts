@@ -10,4 +10,10 @@ export class DealsService {
 
     return deals;
   }
+
+  async findOne(requestedId: string): Promise<any> {
+    const deal: any = await this.databaseService.deals.findUnique({where: {id: requestedId}})
+
+    return deal;
+  }
 }

@@ -7,6 +7,7 @@ import {
   Param,
   Delete,
   UseGuards,
+  Query,
 } from '@nestjs/common';
 import { DealsService } from './deals.service';
 import { IsAuthorized } from 'src/guards/isAuthorized.guard';
@@ -19,5 +20,10 @@ export class DealsController {
   @Get()
   findAll(): any {
     return this.dealsService.findAll();
+  }
+
+  @Get()
+  findById(@Query ('id') id: string): any {
+    return this.dealsService.findOne(id);
   }
 }
