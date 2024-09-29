@@ -1,0 +1,98 @@
+.block {
+  position: absolute;
+  top: 0px;
+  right: 100px;
+}
+
+.title {
+  margin-bottom: 15px;
+  text-align: right;
+  cursor: pointer;
+  color: #b29f7e;
+
+  font-family: 'Lato';
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 22px;
+}
+
+.modal {
+  width: 100vw;
+  height: 100vh;
+  background-color: #ccccccab;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 7;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .modalForm {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 5px;
+    position: relative;
+
+    .closeBtn {
+      width: 16px;
+      height: 16px;
+      border: 0;
+      background: transparent;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+  }
+
+  .inputTitle {
+    margin-bottom: 4px;
+
+    font-family: 'Merriweather';
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
+
+    color: #172234;
+  }
+
+  .input {
+    width: 310px;
+    height: 48px;
+    padding: 0px 20px;
+    margin-bottom: 20px;
+
+    background-color: #e0e0e0;
+    border: 0;
+    border-radius: 5px;
+
+    font-family: 'Lato';
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+
+    color: #172234;
+  }
+
+  .submitBtn {
+    width: 350px;
+    height: 48px;
+    margin-bottom: 15px;
+
+    background-color: #b29f7e;
+    color: #fff;
+
+    font-family: 'Merriweather';
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 22px;
+
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #bd9c64c5;
+    }
+  }
+}

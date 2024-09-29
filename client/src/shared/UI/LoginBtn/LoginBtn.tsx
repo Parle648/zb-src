@@ -1,10 +1,11 @@
+import { Link } from 'react-router-dom';
 import styles from './styles/loginBtn.module.scss';
 
 const LoginBtn = () => {
   return (
-    <a className={styles.button} href="/login">
+    <Link className={styles.button} to="/login">
       Login
-    </a>
+    </Link>
   );
 };
 

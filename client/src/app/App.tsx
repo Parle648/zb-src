@@ -7,6 +7,7 @@ import { Provider } from 'react-redux';
 import stateStore from './store';
 import Header from '../widgets/Header/Header';
 import Loader from '../shared/UI/Loader/Loader';
+import DealPage from '../pages/DealPage';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/" element={<Main />}></Route>
           <Route path="/sign-up" element={<SignUp />}></Route>
           <Route path="/login" element={<Login />}></Route>
+          <Route path="/deal/:id" element={<DealPage />}></Route>
         </Routes>
       </BrowserRouter>
     </Provider>

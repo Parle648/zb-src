@@ -1,6 +1,8 @@
+import { Link } from 'react-router-dom';
 import styles from './styles/dealCard.module.scss';
 
 const DealCard = ({
+  id,
   name,
   price,
   tiket,
@@ -9,6 +11,7 @@ const DealCard = ({
   dealDaysLeft,
   background,
 }: {
+  id: string,
   name: string;
   price: number;
   tiket: number;
@@ -18,7 +21,7 @@ const DealCard = ({
   background: any;
 }) => {
   return (
-    <div className={styles.card}>
+    <Link to={`/deal/${id}`} className={styles.card}>
       <img className={styles.background} src={background} alt="background" />
       <div className={styles.innerWrapper}>
         <div className={styles.dealInfo}>
@@ -34,7 +37,7 @@ const DealCard = ({
           <div className={styles.dealSold}>Sold {soldPercent}%</div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 

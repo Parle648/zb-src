@@ -1,10 +1,11 @@
+import { Link } from 'react-router-dom';
 import styles from './styles/signUp.module.scss';
 
 const SignUpLink = () => {
   return (
-    <a className={styles.button} href="/sign-up">
+    <Link className={styles.button} to="/sign-up">
       Sign up
-    </a>
+    </Link>
   );
 };
 

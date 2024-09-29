@@ -30,6 +30,7 @@ const Deals = () => {
         {deals.map((deal: any) => {
           return (
             <DealCard
+              id={deal.id}
               name={deal.string}
               price={deal.amount_cost}
               yieldPercent={deal.yield}

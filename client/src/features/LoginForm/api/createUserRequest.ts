@@ -9,18 +9,20 @@ const authRequest = async (data: {
 }): Promise<any> => {
   try {
     stateStore.dispatch(setLoading(true));
-    const authToken = await axios.get(
+    const response = await axios.get(
       `http://localhost:3000/users?loginData=${JSON.stringify(data)}`,
     );
 
-    if (authToken.data.token) {
-      updateToken(authToken.data.token);
+    if (response.data.token) {
+      updateToken(response.data.token);
       return;
+    } else {
+      alert(response.data.message);
     }
-
-    throw new Error(authToken.data);
-  } catch (error) {
+  } catch (error: any) {
     // todo error handling logic
+
+    alert('');
   } finally {
     stateStore.dispatch(setLoading(false));
   }

@@ -1,6 +1,8 @@
 .loginForm {
   width: 350px;
   margin-right: 350px;
+  position: relative;
+  position: relative;
 
   .formTitle {
     margin-bottom: 30px;
@@ -10,6 +12,18 @@
     line-height: 34px;
 
     color: #172234;
+  }
+
+  .forgetTitle {
+    margin-bottom: 15px;
+    text-align: right;
+    cursor: pointer;
+    color: #b29f7e;
+
+    font-family: 'Lato';
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 22px;
   }
 
   .inputTitle {
